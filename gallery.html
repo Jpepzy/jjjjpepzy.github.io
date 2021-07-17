@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Gallery</title>
+<link rel="stylesheet" href="css/fancybox.min.css" media="screen">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/full-slider.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Start WOWSlider.com HEAD section -->
+<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+<script src="js/fancybox.min.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+<style>
+body { padding-top: 50px; }
+
+/*#####################
+Additional Styles (required)
+######################*/
+
+.carousel-inner .item img {
+	width:100%;
+	height:100%;
+}
+.item .thumbnail {
+	margin-bottom:0;
+}
+.carousel-control.left, .carousel-control.right {
+	background-image:none !important;
+}
+.carousel-control {
+	background:	#ddd;
+	color:#999;
+	padding: 4px 0;
+	width:26px;
+	top:auto;	
+	left:auto;
+	bottom:0;
+	opacity:1;
+	text-shadow:none;
+}
+.carousel-control.right {
+	right:10px;
+	
+}
+
+.carousel-control.left {
+	right: 40px;
+}
+.footer{
+	 background: #0072bc;
+	 min-height: 5em;
+	 padding: 4px 0;
+	}
+	.footer, a, h3{
+		color: #FFFFFF;
+		padding: 4px 0;
+		margin:5px;
+		}
+		.light-footer, a{
+			color: #000000;
+			 min-height: 1em;
+			 padding: 4px 0;
+			 	}
+
+</style>
+
+</head>
+<link rel="shortcut icon" href="img/favicon.png">
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <a class="navbar-brand" href="index.html"><span class="pull-left-center"></span></a><a href="#" title="logo" rel="home"><img class="site-logo" src="img/tsclogo.png" alt="gsa logo" /></a></span>
+                <ul class="nav navbar-nav navbar-right">
+                       <li> <a href="index.html">Home</a></li>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Services<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="games.html">Games</a></li>
+                </ul></li>
+                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Facilities <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="classroom.html">Classrooms</a></li>
+                <li><a href="playground.html">Playing grounds</a></li>
+                <li><a href="kitchen.html">Kitchen</a></li>
+                <li><a href="transportation.html">Transportation</a></li>
+                </ul></li>
+                 <li><a href="admission.html">Admission</a></li>
+                <li><a href="new&events.html">Events & News</a></li>
+                  <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">About us<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="management.html">Management</a></li>
+                </ul></li>
+                      <li><a href="gallery.html">Gallery</a> </li>
+                      <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://www.facebook.com/MummyDayCareCentre/"><i class="fa fa-facebook"></i></a></li>
+                
+                     </ul>
+                    </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+     
+    <!-- it works the same with all jquery version from 1.x to 2.x -->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <!-- use jssor.slider.mini.js (40KB) instead for release -->
+    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
+    <script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script>
+	$('#myCarousel').carousel({
+		interval:   4000
+	});
+</script>
+ <script>
+			$("span.menu").click(function(){
+				$(".top-nav ul").slideToggle(20, function(){
+				});
+			});
+			</script>
+            <script>
+			(function ($, window, delay) {
+  // http://jsfiddle.net/AndreasPizsa/NzvKC/
+  var theTimer = 0;
+  var theElement = null;
+    var theLastPosition = {x:0,y:0};
+  $('[data-toggle]')
+    .closest('li')
+    .on('mouseenter', function (inEvent) {
+    if (theElement) theElement.removeClass('open');
+    window.clearTimeout(theTimer);
+    theElement = $(this);
+
+    theTimer = window.setTimeout(function () {
+      theElement.addClass('open');
+    }, delay);
+  })
+    .on('mousemove', function (inEvent) {
+        if(Math.abs(theLastPosition.x - inEvent.ScreenX) > 4 || 
+           Math.abs(theLastPosition.y - inEvent.ScreenY) > 4)
+        {
+            theLastPosition.x = inEvent.ScreenX;
+            theLastPosition.y = inEvent.ScreenY;
+            return;
+        }
+        
+    if (theElement.hasClass('open')) return;
+    window.clearTimeout(theTimer);
+    theTimer = window.setTimeout(function () {
+      theElement.addClass('open');
+    }, delay);
+  })
+    .on('mouseleave', function (inEvent) {
+    window.clearTimeout(theTimer);
+    theElement = $(this);
+    theTimer = window.setTimeout(function () {
+      theElement.removeClass('open');
+    }, delay);
+  });
+})(jQuery, window, 5); // 200 is the delay in milliseconds
+</script>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+ <div class="container">
+	<div class="row">
+		<div class='list-group gallery'>
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g1.jpg">
+                    <img class="img-responsive" alt="" src="img/g1.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g2.jpg">
+                    <img class="img-responsive" alt="" src="img/g2.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g3.jpg">
+                    <img class="img-responsive" alt="" src="img/g3.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g4.jpg">
+                    <img class="img-responsive" alt="" src="img/g4.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g5.jpg">
+                    <img class="img-responsive" alt="" src="img/g5.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g6.jpg">
+                    <img class="img-responsive" alt="" src="img/g6.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g7.jpg">
+                    <img class="img-responsive" alt="" src="img/g7.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g8.jpg">
+                    <img class="img-responsive" alt="" src="img/g8.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g9.jpg">
+                    <img class="img-responsive" alt="" src="img/g9.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g10.jpg">
+                    <img class="img-responsive" alt="" src="img/g10.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g11.jpg">
+                    <img class="img-responsive" alt="" src="img/g11.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g12.jpg">
+                    <img class="img-responsive" alt="" src="img/g12.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g13.jpg">
+                    <img class="img-responsive" alt="" src="img/g13.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g14.jpg">
+                    <img class="img-responsive" alt="" src="img/g14.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g15.jpg">
+                    <img class="img-responsive" alt="" src="img/g15.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g16.jpg">
+                    <img class="img-responsive" alt="" src="img/g16.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g17.jpg">
+                    <img class="img-responsive" alt="" src="img/g17.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g18.jpg">
+                    <img class="img-responsive" alt="" src="img/g18.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g19.jpg">
+                    <img class="img-responsive" alt="" src="img/g19.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g20.jpg">
+                    <img class="img-responsive" alt="" src="img/g20.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g21.jpg">
+                    <img class="img-responsive" alt="" src="img/g21.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g22.jpg">
+                    <img class="img-responsive" alt="" src="img/g22.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g23.jpg">
+                    <img class="img-responsive" alt="" src="img/g23.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end-->          
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g24.jpg">
+                    <img class="img-responsive" alt="" src="img/g24.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g25.jpg">
+                    <img class="img-responsive" alt="" src="img/g25.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g26.jpg">
+                    <img class="img-responsive" alt="" src="img/g26.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g27.jpg">
+                    <img class="img-responsive" alt="" src="img/g27.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g28.jpg">
+                    <img class="img-responsive" alt="" src="img/g28.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g29.jpg">
+                    <img class="img-responsive" alt="" src="img/g29.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g30.jpg">
+                    <img class="img-responsive" alt="" src="img/g30.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g31.jpg">
+                    <img class="img-responsive" alt="" src="img/g31.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g32.jpg">
+                    <img class="img-responsive" alt="" src="img/g32.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g33.jpg">
+                    <img class="img-responsive" alt="" src="img/g33.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="img/g34.jpg">
+                    <img class="img-responsive" alt="" src="img/g34.jpg" />
+                    <div class='text-right'>
+                        <small class='text-muted'></small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end      
+	</div> <!-- row / end -->
+</div>
+ <!-- container / end -->
+   
+   <hr>
+    </div>
+   <div class="footer">
+			<div class="footer-top-line"> </div>
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-3">
+                        <h3>Location</h3>
+                        <p>No.7  Boundary Road , <br>East Legon, Accra<br>Ghana</p>
+                    </div>
+                     <div class="footer-col col-md-3">
+                        <h3>Contact</h3>
+                        <p>+233 (0) 302 93775 <br>  +233 (0) 20 758 1156<br>mummydaycare@yahoo.com <br>Accra-Ghana</p>
+                         <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/MummyDayCareCentre/" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            </ul>
+                    </div>
+                    
+                    <div class="footer-col col-md-3">
+                    
+                    
+                    
+                        <a href="new&events.html">News & Events </a><br />
+                        <a href="games.html">Games </a><br />
+                        <a href="playground.html">Playground </a><br />
+                      
+                      
+                    </div>
+                   
+                    
+                    
+                    <div class="footer-col col-md-3">
+                     
+                       <a href="overview.html">About us</a><br />
+                        <a href="admission.html">Admission</a><br />
+                        <a href="teaching.html">Teaching</a><br />
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        
+            
+                
+                    <div class="col-lg-12">
+                    <div class="light-footer">
+                        <p align="center">Copyright &copy; MDCC 2021. Design by <a href="http://www.fitaacreative.com" target="_blank">Fitaaba Creative</a></p>
+                        &nbsp;
+       &nbsp;
+       &nbsp;
+       <hr> 
+       </footer> 
+                    </div>
+                   
+                </div>
+                <hr> 
+           </body>
+
+</html>
